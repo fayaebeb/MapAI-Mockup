@@ -79,7 +79,9 @@ export function CityMap({ baseline, after, showAfter = false, showDiff = false }
         attribution: "Tiles © Esri"
       })
 
-      const firstSymbolLayerId = map.getStyle().layers?.find((l) => l.type === "symbol")?.id
+      const firstSymbolLayerId = map
+        .getStyle()
+        .layers?.find((l: { type?: string; id?: string }) => l.type === "symbol")?.id
       map.addLayer(
         {
           id: "satellite-layer",

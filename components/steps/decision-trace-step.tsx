@@ -64,8 +64,8 @@ export function DecisionTraceStep() {
   }
 
   return (
-    <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 pb-10 pt-8 md:grid-cols-[1fr_420px]">
-      <Card className="overflow-hidden">
+    <div className="mx-auto grid h-full min-h-0 w-full max-w-6xl gap-4 px-5 py-6 md:grid-cols-[1fr_420px]">
+      <Card className="flex min-h-0 flex-col overflow-hidden">
         <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-5 py-4">
           <div>
             <div className="text-xs text-muted-foreground">Decision Trace</div>
@@ -73,7 +73,7 @@ export function DecisionTraceStep() {
           </div>
           <Badge variant="success">Exportable</Badge>
         </div>
-        <ScrollArea className="h-[min(70vh,680px)]">
+        <ScrollArea className="min-h-0 flex-1">
           <div className="space-y-3 p-5">
             {trace.length === 0 ? (
               <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-sm text-muted-foreground">
@@ -96,7 +96,7 @@ export function DecisionTraceStep() {
         </ScrollArea>
       </Card>
 
-      <div className="space-y-4">
+      <div className="flex min-h-0 flex-col gap-4">
         <Card className="p-5">
           <div className="text-sm font-semibold">Export</div>
           <div className="mt-1 text-sm text-muted-foreground">Share with stakeholders, archive decisions, or attach to policy memos.</div>

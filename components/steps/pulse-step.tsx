@@ -15,7 +15,7 @@ export function PulseStep() {
   const log = useAppStore((s) => s.log)
 
   return (
-    <div className="relative flex min-h-[calc(100vh-64px)] items-center justify-center px-5">
+    <div className="relative flex min-h-full items-center justify-center px-5 py-6 md:py-8">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-1/2 top-[42%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/10 blur-3xl" />
         <div className="absolute left-[20%] top-[30%] h-[380px] w-[380px] rounded-full bg-blue-600/12 blur-3xl" />
@@ -27,8 +27,11 @@ export function PulseStep() {
           City Pulse — Sapporo Today
         </div>
 
-        <div className="mt-10 flex items-center justify-center">
-          <motion.svg width="420" height="420" viewBox="0 0 500 500" className="drop-shadow-[0_40px_120px_rgba(37,99,235,0.25)]">
+        <div className="mt-6 flex items-center justify-center md:mt-10">
+          <motion.svg
+            viewBox="0 0 500 500"
+            className="h-[min(320px,42vh)] w-[min(320px,42vh)] drop-shadow-[0_40px_120px_rgba(37,99,235,0.25)] md:h-[420px] md:w-[420px]"
+          >
             <defs>
               <radialGradient id="g" cx="30%" cy="25%">
                 <stop offset="0%" stopColor="rgba(56,189,248,0.90)" />
@@ -54,7 +57,7 @@ export function PulseStep() {
           </motion.svg>
         </div>
 
-        <div className="mt-8 text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+        <div className="mt-6 text-balance text-3xl font-semibold tracking-tight md:mt-8 md:text-4xl">
           Today’s stability is holding — but pressure is accumulating downtown.
         </div>
         <div className="mt-3 text-sm text-muted-foreground md:text-base">

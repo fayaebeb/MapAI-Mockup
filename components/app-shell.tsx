@@ -26,18 +26,18 @@ export function AppShell() {
   const reset = useAppStore((s) => s.resetApp)
 
   return (
-    <div className="min-h-screen">
+    <div className="h-dvh overflow-hidden">
       <div className="pointer-events-none fixed inset-x-0 top-0 z-40 h-24 bg-gradient-to-b from-black/30 to-transparent" />
-      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between px-5">
         <div className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-sky-400/25 to-blue-600/25 ring-1 ring-white/10 shadow-glow" />
           <div className="leading-tight">
             <div className="text-sm font-semibold">MAPAI Tourism</div>
             <div className="text-xs text-muted-foreground">City Simulation OS — By PCKK</div>
           </div>
-          <Badge className="ml-2 hidden md:inline-flex" variant="info">
+          {/* <Badge className="ml-2 hidden md:inline-flex" variant="info">
             {stepLabels[step]}
-          </Badge>
+          </Badge> */}
         </div>
         <div className="pointer-events-auto flex items-center gap-2">
           <Badge className="md:hidden" variant="info">
@@ -49,10 +49,11 @@ export function AppShell() {
         </div>
       </header>
 
-      <main className="pt-16">
+      <main className="h-[calc(100dvh-64px)] overflow-y-auto overflow-x-hidden overscroll-contain pt-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
+            className="h-full min-h-0"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } }}
             exit={{ opacity: 0, y: -10, transition: { duration: 0.2, ease: "easeIn" } }}
@@ -69,4 +70,3 @@ export function AppShell() {
     </div>
   )
 }
-

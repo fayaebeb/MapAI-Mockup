@@ -139,8 +139,8 @@ export function ReverseChatStep() {
   }
 
   return (
-    <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 pb-10 pt-8 md:grid-cols-[1.2fr_0.8fr]">
-      <Card className="overflow-hidden">
+    <div className="mx-auto grid h-full min-h-0 w-full max-w-6xl gap-4 px-5 py-6 md:grid-cols-[1.2fr_0.8fr]">
+      <Card className="flex min-h-0 flex-col overflow-hidden">
         <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-5 py-4">
           <div className="flex items-center gap-2 text-sm font-medium">
             <Sparkles className="h-4 w-4 text-sky-300" />
@@ -148,7 +148,7 @@ export function ReverseChatStep() {
           </div>
           <Badge variant="info">AI-led</Badge>
         </div>
-        <ScrollArea className="h-[min(62vh,560px)]">
+        <ScrollArea className="min-h-0 flex-1">
           <div className="space-y-3 p-5">
             {turns.map((t) => (
               <div key={t.id} className={t.role === "ai" ? "flex justify-start" : "flex justify-end"}>
@@ -205,7 +205,7 @@ export function ReverseChatStep() {
         </div>
       </Card>
 
-      <div className="space-y-4">
+      <div className="flex min-h-0 flex-col gap-4">
         <Card className="p-5">
           <div className="text-sm font-semibold">Framing summary</div>
           <div className="mt-3 space-y-2 text-sm">

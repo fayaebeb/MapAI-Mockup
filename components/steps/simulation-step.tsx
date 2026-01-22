@@ -27,8 +27,8 @@ export function SimulationStep() {
   const selected = useMemo(() => policyOptions.find((p) => p.id === simulation.selectedPolicyId), [policyOptions, simulation])
 
   return (
-    <div className="mx-auto grid w-full max-w-7xl gap-4 px-5 pb-10 pt-8 lg:grid-cols-[1fr_420px]">
-      <div className="space-y-4">
+    <div className="mx-auto grid h-full min-h-0 w-full max-w-7xl gap-4 px-5 py-6 lg:grid-cols-[1fr_420px]">
+      <div className="flex min-h-0 flex-col gap-4">
         <div className="flex items-end justify-between gap-4">
           <div>
             <div className="text-xs text-muted-foreground">Simulation</div>
@@ -48,7 +48,7 @@ export function SimulationStep() {
           )}
         </div>
 
-        <div className="h-[min(64vh,620px)]">
+        <div className="min-h-0 flex-1">
           <CityMap baseline={baseline} after={after} showAfter={simulation.ran} showDiff={simulation.ran} />
         </div>
 
@@ -85,17 +85,17 @@ export function SimulationStep() {
         </div>
       </div>
 
-      <Card className="flex h-[min(76vh,720px)] flex-col overflow-hidden">
-  <div className="border-b border-white/10 bg-white/5 px-5 py-4">
-    <div className="flex items-center justify-between gap-3">
-      <div className="text-sm font-semibold">Policy cards</div>
-      {selected ? <Badge variant="info">Selected</Badge> : <Badge>Pick one</Badge>}
-    </div>
-    <div className="mt-1 text-sm text-muted-foreground">3–5 options. Deterministic simulation per policy type.</div>
-  </div>
+      <Card className="flex h-full min-h-0 flex-col overflow-hidden">
+        <div className="border-b border-white/10 bg-white/5 px-5 py-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="text-sm font-semibold">Policy cards</div>
+            {selected ? <Badge variant="info">Selected</Badge> : <Badge>Pick one</Badge>}
+          </div>
+          <div className="mt-1 text-sm text-muted-foreground">3–5 options. Deterministic simulation per policy type.</div>
+        </div>
 
-  <ScrollArea className="flex-1">
-    <div className="space-y-3 p-5">
+        <ScrollArea className="min-h-0 flex-1">
+          <div className="space-y-3 p-5">
             {policyOptions.map((p) => {
               const isSel = p.id === simulation.selectedPolicyId
               return (

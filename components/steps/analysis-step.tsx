@@ -15,8 +15,8 @@ export function AnalysisStep() {
   const log = useAppStore((s) => s.log)
 
   return (
-    <div className="mx-auto grid w-full max-w-7xl gap-4 px-5 pb-10 pt-8 lg:grid-cols-[1fr_420px]">
-      <div className="space-y-4">
+    <div className="mx-auto grid h-full min-h-0 w-full max-w-7xl gap-4 px-5 py-6 lg:grid-cols-[1fr_420px]">
+      <div className="flex min-h-0 flex-col gap-4">
         <div className="flex items-end justify-between gap-4">
           <div>
             <div className="text-xs text-muted-foreground">Analysis mode</div>
@@ -30,7 +30,7 @@ export function AnalysisStep() {
           </Badge>
         </div>
 
-        <div className="h-[min(64vh,620px)]">
+        <div className="min-h-0 flex-1">
           <CityMap baseline={baseline} />
         </div>
 
@@ -53,16 +53,14 @@ export function AnalysisStep() {
         </div>
       </div>
 
-      <Card className="flex h-[min(76vh,720px)] flex-col overflow-hidden">
-  <div className="border-b border-white/10 bg-white/5 px-5 py-4">
-    <div className="text-sm font-semibold">Analysis panel</div>
-    <div className="mt-1 text-sm text-muted-foreground">
-      Drivers and next questions (dummy but plausible)
-    </div>
-  </div>
+      <Card className="flex h-full min-h-0 flex-col overflow-hidden">
+        <div className="border-b border-white/10 bg-white/5 px-5 py-4">
+          <div className="text-sm font-semibold">Analysis panel</div>
+          <div className="mt-1 text-sm text-muted-foreground">Drivers and next questions (dummy but plausible)</div>
+        </div>
 
-  <ScrollArea className="flex-1">
-    <div className="space-y-4 p-5">
+        <ScrollArea className="min-h-0 flex-1">
+          <div className="space-y-4 p-5">
             <div className="rounded-xl border border-white/10 bg-white/5 p-4">
               <div className="text-xs text-muted-foreground">Framing lock</div>
               <div className="mt-2 space-y-1 text-sm">
